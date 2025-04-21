@@ -1,22 +1,25 @@
 <?php
+
 namespace App\Http\Controllers\Api;
 
 use App\Models\Certificate;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class CertificateController extends Controller
 {
     public function index()
     {
+        // dd("hll");
         return Certificate::with(['user', 'course'])->get();
     }
 
     public function store(Request $request)
     {
         $data = $request->validate([
-            'user_id'            => 'required|exists:users,id',
-            'course_id'          => 'required|exists:course,id',
-            'date_of_certificate'=> 'required|date',
+            'user_id' => 'required|exists:users,id',
+            'course_id' => 'required|exists:course,id',
+            'date_of_certificate' => 'required|date',
         ]);
 
         $cert = Certificate::create($data);
@@ -32,7 +35,7 @@ class CertificateController extends Controller
     public function update(Request $request, Certificate $certificate)
     {
         $data = $request->validate([
-            'date_of_certificate'=> 'sometimes|required|date',
+            'date_of_certificate' => 'sometimes|required|date',
         ]);
 
         $certificate->update($data);

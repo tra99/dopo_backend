@@ -1,8 +1,10 @@
 <?php
+
 namespace App\Http\Controllers\Api;
 
 use App\Models\QuizQuestion;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class QuizQuestionController extends Controller
 {

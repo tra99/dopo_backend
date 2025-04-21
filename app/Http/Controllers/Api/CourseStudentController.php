@@ -1,6 +1,8 @@
 <?php
+
 namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use App\Models\CourseStudent;
 use Illuminate\Http\Request;
 
@@ -16,7 +18,7 @@ class CourseStudentController extends Controller
         $data = $request->validate([
             'std_id'               => 'required|exists:users,id',
             'course_id'            => 'required|exists:course,id',
-            'completion_percentage'=> 'integer|min:0|max:100',
+            'completion_percentage' => 'integer|min:0|max:100',
         ]);
 
         $cs = CourseStudent::create($data);
@@ -32,7 +34,7 @@ class CourseStudentController extends Controller
     public function update(Request $request, CourseStudent $courseStudent)
     {
         $data = $request->validate([
-            'completion_percentage'=> 'integer|min:0|max:100',
+            'completion_percentage' => 'integer|min:0|max:100',
         ]);
 
         $courseStudent->update($data);

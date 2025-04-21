@@ -1,6 +1,8 @@
 <?php
+
 namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use App\Models\CourseLessonStd;
 use Illuminate\Http\Request;
 
@@ -14,10 +16,10 @@ class CourseLessonStdController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'std_id'            => 'required|exists:users,id',
-            'lesson_id'         => 'required|exists:lessons,id',
+            'std_id' => 'required|exists:users,id',
+            'lesson_id' => 'required|exists:lessons,id',
             'is_completed_quiz' => 'boolean',
-            'completed_at'      => 'nullable|date',
+            'completed_at' => 'nullable|date',
         ]);
 
         $cls = CourseLessonStd::create($data);
@@ -34,7 +36,7 @@ class CourseLessonStdController extends Controller
     {
         $data = $request->validate([
             'is_completed_quiz' => 'boolean',
-            'completed_at'      => 'nullable|date',
+            'completed_at' => 'nullable|date',
         ]);
 
         $courseLessonStd->update($data);

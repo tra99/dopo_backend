@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\QuizAnswer;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class QuizAnswerController extends Controller
 {
