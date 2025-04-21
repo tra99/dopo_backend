@@ -1,0 +1,71 @@
+services:
+  app:
+    build:
+      args:
+        user: sala
+        uid: 1000
+      context: ./
+      dockerfile: Dockerfile
+    image: dopo
+    container_name: dopo-app
+    restart: unless-stopped
+    working_dir: /var/www/
+    ports:
+      - "5173:5173" # Expose Vite's dev server
+    volumes:
+      - ./:/var/www
+    networks:
+      - dopo
+
+  postgres:
+    image: postgres:15
+    container_name: dopo_postgres_db
+    restart: unless-stopped
+    volumes:
+      - dopo_postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=laravel
+      - POSTGRES_USER=laravel
+      - POSTGRES_PASSWORD=secret
+    ports:
+      - "5432:5432"
+    networks:
+      - dopo
+
+  nginx:
+    image: nginx:1.17-alpine
+    container_name: dopo-nginx
+    restart: unless-stopped
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./:/var/www
+      - /etc/letsencrypt:/etc/letsencrypt:ro  # Mount the SSL certs from host to container
+      - ./docker-compose/nginx:/etc/nginx/conf.d
+    networks:
+      - dopo
+  # Metabase for visualization
+  metabase:
+    image: metabase/metabase:latest
+    environment:
+      - MB_DB_TYPE=postgres
+      - MB_DB_DBNAME=metabase
+      - MB_DB_PORT=5432
+      - MB_DB_USER=laravel
+      - MB_DB_PASS=secret
+      - MB_DB_HOST=dopo_postgres_db
+    platform: linux/amd64
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+    networks:
+      - dopo
+
+networks:
+  dopo:
+    driver: bridge
+
+volumes:
+  dopo_postgres_data:

@@ -1,0 +1,37 @@
+[
+    {
+        "title": "ស្តង់ដាទី១៖ លទ្ធផលសិក្សា",
+        "icon": {
+            "icon": "tabler-circle"
+        },
+        "to": "chapter-1"
+    },
+    {
+        "title": "ស្តង់ដាទី២៖​ ការបង្រៀន",
+        "icon": {
+            "icon": "tabler-circle"
+        },
+        "to": "chapter-2"
+    },
+    {
+        "title": "ស្តង់ដាទី៣៖ ការចូលរួមរបស់អ្នក",
+        "icon": {
+            "icon": "tabler-circle"
+        },
+        "to": "chapter-3"
+    },
+    {
+        "title": "ស្តង់ដាទី៤៖ ដំណើរប្រតិបត្តិ",
+        "icon": {
+            "icon": "tabler-circle"
+        },
+        "to": "chapter-4"
+    },
+    {
+        "title": "ស្តង់ដាទី៣៖ គណនេយ្យភាព",
+        "icon": {
+            "icon": "tabler-circle"
+        },
+        "to": "chapter-5"
+    }
+]

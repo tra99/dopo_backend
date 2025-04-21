@@ -1,0 +1,34 @@
+{
+    "data": [
+        {
+            "index": 1,
+            "position": "MoeEYS Leaders",
+            "total_users": 3,
+            "status": "កំពុងដំណើរការ"
+        },
+        {
+            "index": 2,
+            "position": "Technical Department",
+            "total_users": 4,
+            "status": "មិនដំណើរការ"
+        },
+        {
+            "index": 3,
+            "position": "Provincial Department",
+            "total_users": 13,
+            "status": "កំពុងដំណើរការ"
+        },
+        {
+            "index": 4,
+            "position": "District Department",
+            "total_users": 32,
+            "status": "កំពុងដំណើរការ"
+        },
+        {
+            "index": 5,
+            "position": "School",
+            "total_users": 543,
+            "status": "កំពុងដំណើរការ"
+        }
+    ]
+}
