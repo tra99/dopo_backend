@@ -10,5 +10,5 @@ Route::prefix('quiz-answers')
         Route::get('/{quizAnswer}', [QuizAnswerController::class, 'show']);
         Route::post('/',            [QuizAnswerController::class, 'store']);
         Route::patch('/{quizAnswer}', [QuizAnswerController::class, 'update']);
-        Route::delete('/{quizAnswer}',[QuizAnswerController\class, 'destroy']);
+        Route::delete('/{quizAnswer}',[QuizAnswerController::class, 'destroy']);
     });

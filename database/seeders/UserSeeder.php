@@ -22,6 +22,13 @@ class UserSeeder extends Seeder
                 'password' => bcrypt('12345678'),
                 'school_id' => 1,
                 'status' => 1,
+            ],
+            [
+                'name' => 'Hok Sochetra',
+                'email' => 'chetra123@gmail.com',
+                'password' => bcrypt('12345678'),
+                'school_id' => 1,
+                'status' => 1,
             ]
         ];
 
@@ -51,6 +58,10 @@ class UserSeeder extends Seeder
             [
                 'name' => 'School Department',
                 'status' => 1
+            ],
+            [
+                'name' => 'Student',
+                'status' => 1
             ]
         ];
 
@@ -72,6 +83,10 @@ class UserSeeder extends Seeder
             [
                 'user_id' => 1,
                 'role_id' => 4,
+            ],
+            [
+                'user_id' => 2,
+                'role_id' => 6,
             ],
         ];
         DB::table('user_role')->insert($user_role);
