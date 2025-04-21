@@ -33,6 +33,13 @@ Route::prefix('v1')->group(function () {
     require __DIR__ . '/apis/challenge.php';
     require __DIR__ . '/apis/notification.php';
     require __DIR__ . '/apis/achievement.php';
+    require __DIR__ . '/apis/certificate.php';
+    require __DIR__ . '/apis/course.php';
+    require __DIR__ . '/apis/courseLessonStd.php';
+    require __DIR__ . '/apis/courseStudent.php';
+    require __DIR__ . '/apis/lesson.php';
+    require __DIR__ . '/apis/quizAnswer.php';
+    require __DIR__ . '/apis/quizQuestion.php';
 
     // Graph and Layout
     require __DIR__ . '/apis/widget.php';

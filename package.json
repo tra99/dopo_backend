@@ -32,6 +32,7 @@
     "cookie-es": "1.2.2",
     "date-fns": "^4.1.0",
     "destr": "2.0.3",
+    "dopo": "file:",
     "eslint-plugin-regexp": "2.7.0",
     "firebase": "^11.4.0",
     "jwt-decode": "4.0.0",
