@@ -9,13 +9,13 @@ class CourseStudentSeeder extends Seeder
     public function run()
     {
         CourseStudent::create([
-            'std_id' => 1,  // Assuming student with id 1 exists
-            'course_id' => 1, // Assuming course with id 1 exists
+            'std_id' => 1,  
+            'course_id' => 1, 
             'completion_percentage' => 75
         ]);
         CourseStudent::create([
-            'std_id' => 2,  // Assuming student with id 2 exists
-            'course_id' => 2, // Assuming course with id 2 exists
+            'std_id' => 2,  
+            'course_id' => 2,
             'completion_percentage' => 80
         ]);
     }

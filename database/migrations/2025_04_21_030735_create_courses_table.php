@@ -14,6 +14,7 @@ return new class extends Migration {
             $table->unsignedInteger('teacher_id');
             $table->dateTime('completion_date')->nullable();
             $table->text('description')->nullable();
+            $table->text('image')->nullable();
             $table->timestamps();
 
             $table
@@ -29,4 +30,3 @@ return new class extends Migration {
         Schema::dropIfExists('course');
     }
 };
-

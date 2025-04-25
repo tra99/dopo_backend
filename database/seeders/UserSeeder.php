@@ -27,9 +27,23 @@ class UserSeeder extends Seeder
                 'name' => 'Hok Sochetra',
                 'email' => 'chetra123@gmail.com',
                 'password' => bcrypt('12345678'),
-                'school_id' => 1,
+                'school_id' => 2,
                 'status' => 1,
-            ]
+            ],
+            [
+                'name' => 'Chharng Chhit',
+                'email' => 'chhit@gmail.com',
+                'password' => bcrypt('12345678'),
+                'school_id' => 3,
+                'status' => 1,
+            ],
+            [
+                'name' => 'Hai Tongmeng',
+                'email' => 'tongmeng@gmail.com',
+                'password' => bcrypt('12345678'),
+                'school_id' => 4,
+                'status' => 1,
+            ],
         ];
 
         foreach ($user as $key => $value) {
@@ -60,6 +74,10 @@ class UserSeeder extends Seeder
                 'status' => 1
             ],
             [
+                'name' => 'Teacher',
+                'status' => 1
+            ],
+            [
                 'name' => 'Student',
                 'status' => 1
             ]
@@ -87,6 +105,14 @@ class UserSeeder extends Seeder
             [
                 'user_id' => 2,
                 'role_id' => 6,
+            ],
+            [
+                'user_id' => 3,
+                'role_id' => 7,
+            ],
+            [
+                'user_id' => 4,
+                'role_id' => 7,
             ],
         ];
         DB::table('user_role')->insert($user_role);

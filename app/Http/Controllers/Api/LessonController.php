@@ -29,6 +29,12 @@ class LessonController extends Controller
         return response()->json($lesson, 201);
     }
 
+    public function filterLessonsByCourseId($courseId)
+    {
+        return Lesson::where('course_id', $courseId)->get();
+    }
+
+
     public function show(Lesson $lesson)
     {
         return $lesson->load('course', 'quizQuestions', 'students');
@@ -39,7 +45,7 @@ class LessonController extends Controller
         $data = $request->validate([
             'title'            => 'sometimes|required|string|max:255',
             'description'      => 'nullable|string',
-            'link_video'       => 'nullable|url',
+            'link_ video'       => 'nullable|url',
             'end_date'         => 'nullable|date',
             'quiz_total_score' => 'integer|min:0',
         ]);

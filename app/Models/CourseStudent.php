@@ -12,6 +12,7 @@ class CourseStudent extends Model
         'std_id',
         'course_id',
         'completion_percentage',
+        'image',
     ];
 
     public function student()
@@ -24,4 +25,3 @@ class CourseStudent extends Model
         return $this->belongsTo(Course::class, 'course_id');
     }
 }
-

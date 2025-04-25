@@ -13,6 +13,7 @@ return new class extends Migration {
             $table->unsignedInteger('std_id');
             $table->unsignedInteger('course_id');
             $table->unsignedInteger('completion_percentage')->default(0);
+            $table->text('image')->nullable();
             $table->timestamps();
 
             $table
@@ -33,4 +34,3 @@ return new class extends Migration {
         Schema::dropIfExists('course_student');
     }
 };
-

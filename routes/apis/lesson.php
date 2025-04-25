@@ -7,8 +7,9 @@ Route::prefix('lessons')
     ->middleware('auth:sanctum')
     ->group(function () {
         Route::get('/',       [LessonController::class, 'index']);
-        Route::get('/{lesson}',[LessonController::class, 'show']);
+        Route::get('/{lesson}', [LessonController::class, 'show']);
         Route::post('/',      [LessonController::class, 'store']);
         Route::patch('/{lesson}', [LessonController::class, 'update']);
-        Route::delete('/{lesson}',[LessonController::class, 'destroy']);
+        Route::delete('/{lesson}', [LessonController::class, 'destroy']);
+        Route::get('/course_id/{course_id}', [LessonController::class, 'filterLessonsByCourseId']);  // Make sure this route is here
     });

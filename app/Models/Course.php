@@ -13,6 +13,7 @@ class Course extends Model
         'teacher_id',
         'completion_date',
         'description',
+        'image',
     ];
 
     public function teacher()
@@ -26,10 +27,10 @@ class Course extends Model
             User::class,
             'course_student',
             'course_id',
-            'std_id'
+            relatedPivotKey: 'std_id'
         )
-        ->withPivot('completion_percentage')
-        ->withTimestamps();
+            ->withPivot('completion_percentage')
+            ->withTimestamps();
     }
 
     public function lessons()
@@ -42,4 +43,3 @@ class Course extends Model
         return $this->hasMany(Certificate::class, 'course_id');
     }
 }
-
