@@ -30,6 +30,13 @@ class DatabaseSeeder extends Seeder
             ParticipantSeeder::class,
             EvaluationCriteriaSeeder::class,
             SupportPhaseSeeder::class,
+            CourseSeeder::class,
+            CourseStudentSeeder::class,
+            CertificateSeeder::class,
+            LessonSeeder::class,
+            CourseLessonStdSeeder::class,
+            QuizQuestionSeeder::class,
+            QuizAnswerSeeder::class,
         ]);
     }
 }
